@@ -75,7 +75,7 @@ pytest --alluredir=./reports/xml
 allure serve ./reports/xml
 
 ```
-## 📂 项目结构
+## 📂 项目结构 (Project Structure)
 MobileAutomationFramework/
 ├── .github/                # [CI/CD] GitHub Actions 工作流
 │   └── workflows/
