@@ -1,5 +1,8 @@
 # MobileAutomationFramework 📱
-还没开始
+项目还没开始,但是已经写好了vibe coding的相关操作手册,和函数规范
+所有可以用这个项目试试vibe coding
+用AI执行的话,在对话框@.vscode/memory-bank/ (让AI读取对应文档);再直接复制Prompt.md的内容发给AI即可
+(还有操作手册,函数规范,已经本简介均有AI生成)
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Appium](https://img.shields.io/badge/Appium-3.0%2B-green)](https://appium.io/)
