@@ -1,9 +1,11 @@
 # MobileAutomationFramework 📱
 项目还没开始,但是已经写好了vibe coding的相关操作手册,和函数规范
 
-所有可以用这个项目试试vibe coding
+所以可以用这个项目试试vibe coding
 
 用AI执行的话,在对话框@.vscode/memory-bank/ (让AI读取对应文档);再直接复制Prompt.md的内容发给AI即可
+
+这条Prompt会让AI执行部分需求的vibe coding,之后的操作可以找AI问问,这里就不详细提供了
 
 (还有操作手册,函数规范,已经本简介均有AI生成)
 
