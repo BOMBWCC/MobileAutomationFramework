@@ -1,0 +1,91 @@
+# ==========================================
+# 🐍 Python Standard
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# 📦 Virtual Environments
+# ==========================================
+# 常见的虚拟环境目录名
+venv/
+.venv/
+env/
+.env/
+
+# ==========================================
+# 🔐 Environment Variables & Secrets (重要)
+# ==========================================
+# 忽略实际的环境变量文件，防止密码泄露
+.env
+.env.test
+.env.prod
+
+# 保留模板文件，告诉别人需要配什么
+!.env.example
+
+# ==========================================
+# 🧪 Test & Reports (Pytest + Allure)
+# ==========================================
+# Pytest 缓存
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Allure 报告生成目录
+reports/
+allure-results/
+allure-report/
+.allure/
+
+# ==========================================
+# 📜 Logs & Artifacts (项目产出)
+# ==========================================
+# 忽略运行日志
+logs/*.log
+
+# 忽略截图 (保留目录结构，但不上传图片)
+logs/screenshots/*.png
+logs/screenshots/*.jpg
+
+# ==========================================
+# 💻 IDE & Editor (Vibe Coding 特别适配)
+# ==========================================
+.idea/
+
+# --- VS Code 策略 ---
+# 忽略 .vscode 文件夹下的所有内容...
+.vscode/*
+
+# ...但是在 Vibe Coding 中，我们需要保留 Memory Bank！
+!.vscode/memory-bank/
+
+# ...也建议保留项目级的统一设置 (可选)
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ==========================================
+# 🍎 OS Files
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
