@@ -76,6 +76,8 @@ allure serve ./reports/xml
 
 ```
 ## 📂 项目结构 (Project Structure)
+
+```text
 MobileAutomationFramework/
 ├── .github/                # [CI/CD] GitHub Actions 工作流
 │   └── workflows/
@@ -160,6 +162,8 @@ MobileAutomationFramework/
 ├── reports/                # Allure XML/HTML 报告
 ├── logs/                   # 运行时产生的 .log 文件
 └── screenshots/            # 失败截图或业务截图
+```
+
 ---
 
 ## 🤖 关于 Vibe Coding
