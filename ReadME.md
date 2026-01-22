@@ -1,5 +1,4 @@
-```markdown
-[**中文文档**](README_CN.md) | [English](README.md)
+[**中文**](README_CN.md) | [English](README.md)
 
 # MobileAutomationFramework
 
@@ -8,7 +7,7 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**MobileAutomationFramework** is an enterprise-grade, scalable automated testing framework for Android and iOS. 
+**MobileAutomationFramework** is an automated testing framework for Android and iOS. 
 
 Built on **Appium (Python Client 3.x)** and **Pytest**, it solves the common pain points of UI automation—flakiness and maintainability—by enforcing a strict **3-Layer Architecture** (Page-Workflow-Test).
 
@@ -28,7 +27,6 @@ graph TD
         BP --> Driver[Appium Driver]
     end
     Driver --> App[Mobile App]
-
 ```
 
 ## 🚀 Key Features
@@ -56,14 +54,13 @@ MobileAutomationFramework/
 ├── workflows/              # Business Logic (Page Orchestrator)
 ├── pytest.ini              # Pytest Config
 └── requirements.txt        # Dependencies
-
 ```
 
 ## 🛠️ Quick Start
 
 ### Prerequisites
 
-* Python 3.9+
+* Python 3.10+
 * Appium Server 2.x
 * Android Emulator/Device
 
@@ -82,7 +79,6 @@ source venv/bin/activate
 
 # Install Dependencies
 pip install -r requirements.txt
-
 ```
 
 ### 2. Configure Project
@@ -91,7 +87,6 @@ Create your environment config:
 
 ```bash
 cp .env.example .env
-
 ```
 
 Edit `.env` with your device details:
@@ -102,7 +97,6 @@ DEVICE_NAME=emulator-5554
 # Example: Android Settings
 APP_PACKAGE=com.android.settings
 APP_ACTIVITY=.Settings
-
 ```
 
 ### 3. Run Tests
@@ -111,14 +105,12 @@ Run the demo test with Allure reporting enabled:
 
 ```bash
 pytest testcases/test_demo.py
-
 ```
 
 ### 4. View Report
 
 ```bash
 allure serve ./reports/allure-results
-
 ```
 
 ## 📝 Contribution
@@ -129,9 +121,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-```
 
-```
 ## 🤖 About Vibe Coding
 
 This project was built using the **Vibe Coding** methodology.

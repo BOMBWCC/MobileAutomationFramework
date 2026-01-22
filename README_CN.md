@@ -1,5 +1,4 @@
-```markdown
-[English](README.md) | [**中文文档**](README_CN.md)
+[English](README.md) | [**中文**](README_CN.md)
 
 # MobileAutomationFramework
 
@@ -8,7 +7,7 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**MobileAutomationFramework** 是一个企业级、高可扩展的移动端自动化测试框架（支持 Android/iOS）。
+**MobileAutomationFramework** 是一个移动端自动化测试框架（支持 Android/iOS）。
 
 本项目基于 **Appium (Python Client 3.x)** 和 **Pytest** 构建，旨在解决 UI 自动化测试中常见的“运行不稳定”和“维护成本高”等痛点。通过严格执行 **三层架构设计 (Page-Workflow-Test)**，实现了测试逻辑与 UI 细节的完全解耦。
 
@@ -28,7 +27,6 @@ graph TD
         BP --> Driver[Appium Driver]
     end
     Driver --> App[移动端 App]
-
 ```
 
 ## 🚀 核心特性
@@ -56,14 +54,13 @@ MobileAutomationFramework/
 ├── workflows/              # [流程层] 业务逻辑 (页面编排器)
 ├── pytest.ini              # Pytest 运行配置文件
 └── requirements.txt        # 项目依赖库
-
 ```
 
 ## 🛠️ 快速开始
 
 ### 前置要求
 
-* Python 3.9+
+* Python 3.10+
 * Appium Server 2.x
 * Android 模拟器或真机
 
@@ -82,7 +79,6 @@ source venv/bin/activate
 
 # 安装依赖
 pip install -r requirements.txt
-
 ```
 
 ### 2. 项目配置
@@ -91,7 +87,6 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-
 ```
 
 编辑 `.env` 文件，填入你的设备信息：
@@ -102,7 +97,6 @@ DEVICE_NAME=emulator-5554
 # 示例：安卓设置
 APP_PACKAGE=com.android.settings
 APP_ACTIVITY=.Settings
-
 ```
 
 ### 3. 运行测试
@@ -111,27 +105,21 @@ APP_ACTIVITY=.Settings
 
 ```bash
 pytest testcases/test_demo.py
-
 ```
 
 ### 4. 查看报告
 
 ```bash
 allure serve ./reports/allure-results
-
 ```
 
-## 📝 贡献
 
-欢迎提交 Pull Request！如果是重大改动，请先提交 Issue 进行讨论。
 
 ## 📄 许可证
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-```
 
-```
 ## 🤖 关于 Vibe Coding
 
 本项目采用 **Vibe Coding** 模式构建。
