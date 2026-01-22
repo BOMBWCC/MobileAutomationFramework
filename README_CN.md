@@ -112,6 +112,14 @@ pytest testcases/test_demo.py
 ```bash
 allure serve ./reports/allure-results
 ```
+如果打不开可以尝试强制地址为localhost
+```bash
+allure serve -h localhost ./reports/allure-results
+```
+或者直接生html文档
+```bash
+allure generate ./reports/allure-results -o ./reports/html --clean
+```
 
 
 

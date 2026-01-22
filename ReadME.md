@@ -112,6 +112,14 @@ pytest testcases/test_demo.py
 ```bash
 allure serve ./reports/allure-results
 ```
+Troubleshooting: If the page fails to load (often due to VPN or network settings), force the host to localhost:
+```bash
+allure serve -h localhost ./reports/allure-results
+```
+Alternatively, generate static HTML files:
+```bash
+allure generate ./reports/allure-results -o ./reports/html --clean
+```
 
 ## 📝 Contribution
 
