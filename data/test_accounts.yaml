@@ -1,0 +1,25 @@
+user_a:
+  phone: "13800000001"
+  password: "PASSWORD_A"
+  initial_nickname: "USERNAME_A"
+  new_nickname: "UserA_改"
+  signature: "Life is like a box of chocolates."
+  gender: "男"
+
+user_b:
+  phone: "13800000002"
+  password: "PASSWORD_B"
+  initial_nickname: "USERNAME_B"
+  gender: "女"
+
+user_c:
+  phone: "13800000003"
+  password: "PASSWORD_C"
+  initial_nickname: "USERNAME_C"
+  gender: "男"
+
+user_d:
+  phone: "13800000004"
+  password: "PASSWORD_D"
+  initial_nickname: "USERNAME_D"
+  gender: "女"

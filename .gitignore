@@ -1,26 +1,75 @@
-# Python
+# 1. Pages:
+pages/*
+!pages/.gitkeep
+!pages/__init__.py
+!pages/base_page.py
+!pages/mixin/*
+
+# 2. Workflows:
+workflows/*
+!workflows/.gitkeep
+!workflows/__init__.py
+!workflows/base_workflow.py
+
+# 3. Testcases:
+testcases/*
+!testcases/.gitkeep
+!testcases/__init__.py
+
+# 4. Data:
+data/*
+!data/.gitkeep
+
+# ==========================
+# 🐍 Python Standard & Cache
+# ==========================
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Environments
+# ==========================
+# 🏠 Environment & Logs
+# ==========================
 .env
 .venv
 env/
 venv/
-
-# Testing
-.pytest_cache/
-reports/
+logs/*
+!logs/.gitkeep
 *.log
-geckodriver.log
-pytestdebug.log
 
-# IDE
+# ==========================
+# 🧪 Reports & Media
+# ==========================
+reports/
+allure-report/
+allure-results/
+.pytest_cache/
+screenshots/
+*.png
+*.mp4
+
+# ==========================
+# ⚙️ IDE
+# ==========================
 .idea/
 .vscode/
 *.swp
-.DS_Store
-
-# Mac
 .DS_Store
