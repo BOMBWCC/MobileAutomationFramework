@@ -3,7 +3,7 @@ pages/*
 !pages/.gitkeep
 !pages/__init__.py
 !pages/base_page.py
-!pages/mixin/*
+!pages/mixins/
 
 # 2. Workflows:
 workflows/*
@@ -15,6 +15,7 @@ workflows/*
 testcases/*
 !testcases/.gitkeep
 !testcases/__init__.py
+!testcases/test_demo.py
 
 # 4. Data:
 data/*
