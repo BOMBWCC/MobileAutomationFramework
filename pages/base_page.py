@@ -110,122 +110,64 @@ class BasePage(ActionMixin):
         except (TimeoutException, NoSuchElementException):
             return False
 
-        def save_screenshot(self, name: str):
-
-            """
-
-            Saves a screenshot to the reports directory.
-
-            """
-
-            import os
-
-            from datetime import datetime
-
-
-
-            # Ensure directory exists
-
-            path = GlobalConfig.PROJECT_ROOT / "reports" / "screenshots"
-
-            path.mkdir(parents=True, exist_ok=True)
-
-
-
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-            filename = f"{name}_{timestamp}.png"
-
-            full_path = path / filename
-
-
-
-            try:
-
-                self.driver.save_screenshot(str(full_path))
-
-                logger.info(f"Screenshot saved: {full_path}")
-
-            except Exception as e:
-
-                logger.error(f"Failed to save screenshot: {e}")
-
-
-
-        def tap_by_coordinates(self, x_pct: float, y_pct: float):
-
-            """
-
-            Taps at coordinates specified as percentages of screen width and height.
-
-            """
-
-            x = int(self.width * x_pct)
-
-            y = int(self.height * y_pct)
-
-            self.tap_coordinates(x, y)
-
-
-
-        def find_image_element(self, template_name: str, threshold: float = 0.8):
-
-            """
-
-            Finds an element by image template matching.
-
-            Returns an object that has a .click() method to simulate element-like behavior.
-
-            """
-
-            from utils.cv_helper import CVHelper
-
-            from utils.file_helper import FileHelper
-
-
-
-            template_path = str(GlobalConfig.PROJECT_ROOT / "data" / "templates" / template_name)
-
-            screenshot_bytes = self.driver.get_screenshot_as_png()
-
-
-
-            coords = CVHelper.find_image_center(template_path, screenshot_bytes, threshold)
-
-            if coords:
-
-                class MockElement:
-
-                    def __init__(self, page, x, y):
-
-                        self.page = page
-
-                        self.x = x
-
-                        self.y = y
-
-                    def click(self):
-
-                        self.page.tap_coordinates(self.x, self.y)
-
-
-
-                return MockElement(self, coords[0], coords[1])
-
-            else:
-
-                raise NoSuchElementException(f"Could not find image template: {template_name}")
-
-
-
-        def format_locator(self, locator: tuple, *args) -> tuple:
-
-            """
-
-            Formats a dynamic locator with arguments.
-
-            """
-
-            return (locator[0], locator[1].format(*args))
+    def save_screenshot(self, name: str):
+        """
+        Saves a screenshot to the reports directory.
+        """
+        import os
+        from datetime import datetime
+        
+        # Ensure directory exists
+        path = GlobalConfig.PROJECT_ROOT / "reports" / "screenshots"
+        path.mkdir(parents=True, exist_ok=True)
+        
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{name}_{timestamp}.png"
+        full_path = path / filename
+        
+        try:
+            self.driver.save_screenshot(str(full_path))
+            logger.info(f"Screenshot saved: {full_path}")
+        except Exception as e:
+            logger.error(f"Failed to save screenshot: {e}")
+
+    def tap_by_coordinates(self, x_pct: float, y_pct: float):
+        """
+        Taps at coordinates specified as percentages of screen width and height.
+        """
+        x = int(self.width * x_pct)
+        y = int(self.height * y_pct)
+        self.tap_coordinates(x, y)
+
+    def find_image_element(self, template_name: str, threshold: float = 0.8):
+        """
+        Finds an element by image template matching.
+        Returns an object that has a .click() method to simulate element-like behavior.
+        """
+        from utils.cv_helper import CVHelper
+        from utils.file_helper import FileHelper
+        
+        template_path = str(GlobalConfig.PROJECT_ROOT / "data" / "templates" / template_name)
+        screenshot_bytes = self.driver.get_screenshot_as_png()
+        
+        coords = CVHelper.find_image_center(template_path, screenshot_bytes, threshold)
+        if coords:
+            class MockElement:
+                def __init__(self, page, x, y):
+                    self.page = page
+                    self.x = x
+                    self.y = y
+                def click(self):
+                    self.page.tap_coordinates(self.x, self.y)
+            
+            return MockElement(self, coords[0], coords[1])
+        else:
+            raise NoSuchElementException(f"Could not find image template: {template_name}")
+    
+    def format_locator(self, locator: tuple, *args) -> tuple:
+        """
+        Formats a dynamic locator with arguments.
+        """
+        return (locator[0], locator[1].format(*args))
 
 

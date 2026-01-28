@@ -42,20 +42,14 @@ class ActionMixin:
         y_end = int(self.height * end_y)
 
         logger.debug(f"Swiping from ({x_start}, {y_start}) to ({x_end}, {y_end})")
-        
+
         actions = ActionChains(self.driver)
-        actions.w3c_actions = ActionBuilder(self.driver, mouse_unit=None)
-        
-        # Setup Pointer Input (Touch)
-        input_device = PointerInput(interaction.POINTER_TOUCH, "finger")
-        actions.w3c_actions.add_source_input(input_device)
-        
+        # The w3c_actions attribute is already an ActionBuilder instance
         actions.w3c_actions.pointer_action.move_to_location(x_start, y_start)
         actions.w3c_actions.pointer_action.pointer_down()
         actions.w3c_actions.pointer_action.pause(duration_ms / 1000)
         actions.w3c_actions.pointer_action.move_to_location(x_end, y_end)
         actions.w3c_actions.pointer_action.release()
-        
         actions.perform()
 
     def swipe_up(self, duration_ms: int = 800):
@@ -78,14 +72,10 @@ class ActionMixin:
         """Tap at specific x, y coordinates"""
         logger.debug(f"Tapping at ({x}, {y})")
         actions = ActionChains(self.driver)
-        actions.w3c_actions = ActionBuilder(self.driver, mouse_unit=None)
-        
-        input_device = PointerInput(interaction.POINTER_TOUCH, "finger")
-        actions.w3c_actions.add_source_input(input_device)
-        
+        # The w3c_actions attribute is already an ActionBuilder instance
         actions.w3c_actions.pointer_action.move_to_location(x, y)
         actions.w3c_actions.pointer_action.pointer_down()
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
-        
+
         actions.perform()
